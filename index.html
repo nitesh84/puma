@@ -3,16 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="./images/puma.png">
+    <link rel="icon" type="image/x-icon" href="./images/puma.png" />
     <link rel="stylesheet" href="style.css" />
-    <title>PUMA.COM| Forever Faster</title>
+    <script
+      src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"
+      defer
+    ></script>
+    <script src="script.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/flickity@2/dist/flickity.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+
+    <title>PUMA.COM | Forever Faster</title>
   </head>
   <body>
     <header>
-      <p>Header</p>
+      <p></p>
     </header>
+
+    <div class="fixed-image">
+      <img
+        src="data:image/png;base64,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"
+        alt=""
+      />
+    </div>
+
+    <!-- Navigation -->
     <nav>
       <div class="left-half">
+        <img src="/images/puma.png" alt="LOGO" />
         <ul>
           <li>New</li>
           <li>Women</li>
@@ -26,12 +50,19 @@
         </ul>
       </div>
       <div class="right-half">
-        <button class="search">SEARCH</button>
+        <button class="search">
+          <span class="material-symbols-outlined"> search </span>SEARCH
+        </button>
+        <div class="icons">
+          <span class="material-symbols-outlined"> favorite </span>
+          <span class="material-symbols-outlined"> shopping_cart </span>
+          <span class="material-symbols-outlined"> person </span>
+        </div>
       </div>
     </nav>
     <!-- Discount Section -->
     <section class="discount">
-      <p>EXTRA 15% OFF ON ORDER ABOVE 3999*</p>
+      <p>EXTRA 15% OFF ON ORDER ABOVE &#8377;3999*</p>
       <ul>
         <li>FOR HIM</li>
         <li>FOR HER</li>
@@ -42,8 +73,10 @@
 
     <!-- NEW ARRIVAL SECTION -->
     <section class="new-arrival">
-      <p>NEW ARRIVALS</p>
-      <p>WORN BY VIRAT KOHLI</p>
+      <div class="space">
+        <p>NEW ARRIVALS</p>
+        <p>WORN BY VIRAT KOHLI</p>
+      </div>
       <div>
         <button class="btn1">SHOP NOW</button>
         <button class="btn2">CURATED LOOKS</button>
@@ -57,11 +90,37 @@
       <p>IT'S A NOW OR NEVER KINDA DEAL</p>
       <button class="btn1">SHOP NOW</button>
     </section>
+    <!-- Palermo -->
+    <section class="palermo">
+      <div class="big">
+          
+              <h2>PALERMO</h2>
+              <p>REWRITE THE CLASSICS</p>
+              <div class="container">
+                  <button>shop now</button>
+                  <button>Explore Style guide</button>
+      </div>
+      </div>
 
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/PufK-Xi0Lvo?autoplay=1&mute=1&controls=0&loop=1&playlist=PufK-Xi0Lvo"
+        title="YouTube video player"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+      >
+      </iframe>
+      <img
+        src="./images/17.jpg"
+        alt=""
+      />
+    </section>
     <!-- PlatBook Section -->
     <section class="playbook">
       <h2>PALERMO PLAYBOOK</h2>
-      <p>Style 'em your way, every day</p>
+      <p id="light">Style 'em your way, every day</p>
       <div class="img-container">
         <div class="img">
           <img src="./images/1.jpg" alt="" />
@@ -109,19 +168,19 @@
       <div class="img-container">
         <div class="img">
           <img src="./images/5.jpg" alt="" />
-          <p>STREETWEAR STAPLE</p>
+          <p>MB.04 LOVE</p>
         </div>
         <div class="img">
           <img src="./images/6.jpg" alt="" />
-          <p>NIGHT-OUT LOOKS</p>
+          <p>DEVIATE MARATHON SERIES</p>
         </div>
         <div class="img">
           <img src="./images/7.jpg" alt="" />
-          <p>PLAYFUL OUTINGS</p>
+          <p>SOFTRIDE</p>
         </div>
         <div class="img">
           <img src="./images/8.jpg" alt="" />
-          <p>THE FESTIVE EDIT</p>
+          <p>LIGHTS OUT PACK</p>
         </div>
       </div>
     </section>
@@ -129,7 +188,7 @@
     <!-- Highlights Section -->
 
     <section class="highlights">
-        <h2>HIGHLIGHTS</h2>
+      <h2>HIGHLIGHTS</h2>
       <div class="highlights-container">
         <div class="img">
           <img src="./images/9.jpg" alt="" />
@@ -156,93 +215,273 @@
 
     <!-- Bannert 4 section -->
 
-
     <section class="banner banner-img4">
-        <p>FENTY x PUMA</p>
-        <p>THE AVANTI BY RIHANNA</p>
-        <button class="btn1">SHOP NOW</button>
-      </section>
+      <p>FENTY x PUMA</p>
+      <p>THE AVANTI BY RIHANNA</p>
+      <button class="btn1">SHOP NOW</button>
+    </section>
 
-
-      <!--NEW SEASON. NEW THREADS Section -->
+    <!--NEW SEASON. NEW THREADS Section -->
     <section class="new-season">
-        <div class="season-container">
-          <div class="img">
-            <img src="./images/13.jpg" alt="" />
-            <p>STREETWEAR STAPLE</p>
-          </div>
-          <div class="img">
-            <img src="./images/14.jpg" alt="" />
-            <p>NIGHT-OUT LOOKS</p>
-          </div>
-          <div class="img">
-            <img src="./images/15.jpg" alt="" />
-            <p>PLAYFUL OUTINGS</p>
-          </div>
-          <div class="img">
-            <img src="./images/16.jpg" alt="" />
-            <p>THE FESTIVE EDIT</p>
-          </div>
+        <h2>NEW SEASON. NEW THREADS</h2>
+      <div class="season-container">
+        <div class="img">
+          <img src="./images/13.jpg" alt="" />
+          <p>JERSEY</p>
         </div>
-      </section>
-      <!-- Bannert 5 section -->
-
+        <div class="img">
+          <img src="./images/14.jpg" alt="" />
+          <p>JERSEY</p>
+        </div>
+        <div class="img">
+          <img src="./images/15.jpg" alt="" />
+          <p>JERSEY</p>
+        </div>
+        <div class="img">
+          <img src="./images/16.jpg" alt="" />
+          <p>JERSEY</p>
+        </div>
+      </div>
+    </section>
+    <!-- Bannert 5 section -->
 
     <section class="banner banner-img5">
-        <p>MMQ SPORT</p>
-        <p>SPORT SOPHISTICATION</p>
-        <button class="btn1">SHOP NOW</button>
-      </section>
+      <p>MMQ SPORT</p>
+      <p>SPORT SOPHISTICATION</p>
+      <button class="btn1">SHOP NOW</button>
+    </section>
 
+    <!-- Carousel -->
+    <h2 id="heading">Recommended For You</h2>
+    <div
+      class="main-carousel"
+      data-flickity='{ "cellAlign": "left", "contain": true, "freeScroll":true , "pageDots": false , "autoPlay":true }'
+    >
+      <div class="carousel-cell">
+        <div class="image-container">
+          <img
+            src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/193753/02/sv01/fnd/IND/fmt/png/UltraRide-ProFoam-Men's-Running-Shoes"
+            alt=""
+          />
+        </div>
+        <div class="">
+          <div class="upper">
+            <p>Puma Court Shatter Low Unisex</p>
+            <p>&#8377;3419</p>
+          </div>
+          <div class="lower">
+            <p>Sneakers</p>
+            <p>&#8377;5999</p>
+          </div>
+        </div>
+      </div>
 
-      <footer>
-        <div class="top">
-            <div class="top-item">
-                <h4>SUPPORT</h4>
-                <ul>
-                    <li>Contact us</li>
-                    <li>Promotions & Sale</li>
-                    <li>Track Order</li>
-                    <li>Shoe Care</li>
-                    <li>Tech Glossary</li>
-                    <li>Initiate Return / Exchange</li>
-                    <li>Cookie Settings</li>
-                </ul>
-            </div>
-            <div class="top-item">
-                <ul>
-                    <li>FAQs</li>
-                    <li>My Account</li>
-                    <li>Exchange & Return Policy</li>
-                    <li>Privacy Policy</li>
-                    <li>Terms & Conditions</li>
-                    <li>Sneakers</li>
-                </ul>
-            </div>
-            <div class="top-item">
-                <h4>ABOUT</h4>
-                <ul>
-                    <li>Company</li>
-                    <li>Corporate News</li>
-                    <li>Press Center</li>
-                    <li>Investors</li>
-                    <li>Sustainability</li>
-                    <li>Careers</li>
-                    <li>Store Locator</li>
-                    <li>PUMA Articles</li>
-                </ul>
-            </div>
-            <div class="top-item"></div>
+      <div class="carousel-cell">
+        <div class="image-container">
+          <img
+            src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/193753/02/sv01/fnd/IND/fmt/png/UltraRide-ProFoam-Men's-Running-Shoes"
+            alt=""
+          />
         </div>
-        <hr>
-        <div class="bottom">
-            <p>element</p>
-            <button class="search">INDIA</button>
-            <div class="copy">
-                <p>&copy; PUMA India Ltd, 2024. All Rights Reserved.</p>
-                  <p>  Imprint and Legal Data</p>
-            </div>
+        <div class="">
+          <div class="upper">
+            <p>Puma Court Shatter Low Unisex</p>
+            <p>&#8377;3419</p>
+          </div>
+          <div class="lower">
+            <p>Sneakers</p>
+            <p>&#8377;5999</p>
+          </div>
         </div>
-      </footer>
+      </div>
+
+      <div class="carousel-cell">
+        <div class="image-container">
+          <img
+            src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/193753/02/sv01/fnd/IND/fmt/png/UltraRide-ProFoam-Men's-Running-Shoes"
+            alt=""
+          />
+        </div>
+        <div class="">
+          <div class="upper">
+            <p>Puma Court Shatter Low Unisex</p>
+            <p>&#8377;3419</p>
+          </div>
+          <div class="lower">
+            <p>Sneakers</p>
+            <p>&#8377;5999</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-cell">
+        <div class="image-container">
+          <img
+            src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/193753/02/sv01/fnd/IND/fmt/png/UltraRide-ProFoam-Men's-Running-Shoes"
+            alt=""
+          />
+        </div>
+        <div class="">
+          <div class="upper">
+            <p>Puma Court Shatter Low Unisex</p>
+            <p>&#8377;3419</p>
+          </div>
+          <div class="lower">
+            <p>Sneakers</p>
+            <p>&#8377;5999</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-cell">
+        <div class="image-container">
+          <img
+            src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/193753/02/sv01/fnd/IND/fmt/png/UltraRide-ProFoam-Men's-Running-Shoes"
+            alt=""
+          />
+        </div>
+        <div class="">
+          <div class="upper">
+            <p>Puma Court Shatter Low Unisex</p>
+            <p>&#8377;3419</p>
+          </div>
+          <div class="lower">
+            <p>Sneakers</p>
+            <p>&#8377;5999</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-cell">
+        <div class="image-container">
+          <img
+            src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/193753/02/sv01/fnd/IND/fmt/png/UltraRide-ProFoam-Men's-Running-Shoes"
+            alt=""
+          />
+        </div>
+        <div class="">
+          <div class="upper">
+            <p>Puma Court Shatter Low Unisex</p>
+            <p>&#8377;3419</p>
+          </div>
+          <div class="lower">
+            <p>Sneakers</p>
+            <p>&#8377;5999</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-cell">
+        <div class="image-container">
+          <img
+            src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/193753/02/sv01/fnd/IND/fmt/png/UltraRide-ProFoam-Men's-Running-Shoes"
+            alt=""
+          />
+        </div>
+        <div class="">
+          <div class="upper">
+            <p>Puma Court Shatter Low Unisex</p>
+            <p>&#8377;3419</p>
+          </div>
+          <div class="lower">
+            <p>Sneakers</p>
+            <p>&#8377;5999</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-cell">
+        <div class="image-container">
+          <img
+            src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/193753/02/sv01/fnd/IND/fmt/png/UltraRide-ProFoam-Men's-Running-Shoes"
+            alt=""
+          />
+        </div>
+        <div class="">
+          <div class="upper">
+            <p>Puma Court Shatter Low Unisex</p>
+            <p>&#8377;3419</p>
+          </div>
+          <div class="lower">
+            <p>Sneakers</p>
+            <p>&#8377;5999</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-cell">
+        <div class="image-container">
+          <img
+            src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/193753/02/sv01/fnd/IND/fmt/png/UltraRide-ProFoam-Men's-Running-Shoes"
+            alt=""
+          />
+        </div>
+        <div class="">
+          <div class="upper">
+            <p>Puma Court Shatter Low Unisex</p>
+            <p>&#8377;3419</p>
+          </div>
+          <div class="lower">
+            <p>Sneakers</p>
+            <p>&#8377;5999</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="top">
+        <div class="top-item">
+          <h4>SUPPORT</h4>
+          <ul>
+            <li>Contact us</li>
+            <li>Promotions & Sale</li>
+            <li>Track Order</li>
+            <li>Shoe Care</li>
+            <li>Tech Glossary</li>
+            <li>Initiate Return / Exchange</li>
+            <li>Cookie Settings</li>
+          </ul>
+        </div>
+        <div class="top-item">
+          <ul>
+            <li>FAQs</li>
+            <li>My Account</li>
+            <li>Exchange & Return Policy</li>
+            <li>Privacy Policy</li>
+            <li>Terms & Conditions</li>
+            <li>Sneakers</li>
+          </ul>
+        </div>
+        <div class="top-item">
+          <h4>ABOUT</h4>
+          <ul>
+            <li>Company</li>
+            <li>Corporate News</li>
+            <li>Press Center</li>
+            <li>Investors</li>
+            <li>Sustainability</li>
+            <li>Careers</li>
+            <li>Store Locator</li>
+            <li>PUMA Articles</li>
+          </ul>
+        </div>
+        <div class="top-item"></div>
+      </div>
+      <hr />
+      <div class="bottom">
+        <div class="payment-icons">
+            <img src="./images/visa.png" alt="Visa" class="payment-icon">
+            <img src="./images/master.png" alt="Mastercard" class="payment-icon">
+          </div>
+          
+        <button class="search"> <img src="./images/india.png" alt=""> INDIA</button>
+        <div class="copy">
+          <p>&copy; PUMA India Ltd, 2024. All Rights Reserved.</p>
+          <p>Imprint and Legal Data</p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
